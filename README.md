@@ -9,13 +9,14 @@ In this workshop, you will modify the Maven file. At the relevant points of the 
 Add the following into the `dependencies` section of the `pom.xml` file.
 
 ```
-<dependency>
-   <groupId>org.jacoco</groupId>
-   <artifactId>org.jacoco.agent</artifactId>
-   <classifier>runtime</classifier>
-   <version>0.8.2</version>
-   <scope>test</scope>
-</dependency>
+        <dependency>
+            <groupId>org.jacoco</groupId>
+            <artifactId>org.jacoco.agent</artifactId>
+            <classifier>runtime</classifier>
+            <version>0.8.2</version>
+            <scope>test</scope>
+        </dependency>
+
 ```
 
 ## Setting up JaCoCo
