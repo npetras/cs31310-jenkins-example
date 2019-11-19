@@ -66,3 +66,30 @@ Add the following into the `plugins` section of the `pom.xml` file.
                 </executions>
             </plugin>
 ```
+
+## Adding sloccount support to Maven file
+
+Part of the exercise asks you to add sloccount. The sloccount binary is already installed on the container. This plugin specifies running the shell script to execute the sloccount program. 
+
+```
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <id>running-sloccount</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>bash</executable>
+                            <arguments>
+                                <argument>sloccount.sh</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+```
