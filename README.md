@@ -1,6 +1,6 @@
 # CS31310 Jenkins Example
 
-This project uses the example code from the end of the Refactoring workshop. 
+This project uses the example code from the end of the Refactoring video, from week 4.
 
 In this workshop, you will modify the Maven file. At the relevant points of the worksheet, you can copy extracts from this file into the Maven file. 
 
@@ -13,7 +13,7 @@ Add the following into the `dependencies` section of the `pom.xml` file.
             <groupId>org.jacoco</groupId>
             <artifactId>org.jacoco.agent</artifactId>
             <classifier>runtime</classifier>
-            <version>0.8.2</version>
+            <version>0.8.6</version>
             <scope>test</scope>
         </dependency>
 
@@ -61,33 +61,6 @@ Add the following into the `plugins` section of the `pom.xml` file.
                                     </limits>
                                 </rule>
                             </rules>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-```
-
-## Adding sloccount support to Maven file
-
-Part of the exercise asks you to add sloccount. The sloccount binary is already installed on the container. This plugin specifies running the shell script to execute the sloccount program. 
-
-```
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.6.0</version>
-                <executions>
-                    <execution>
-                        <id>running-sloccount</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>bash</executable>
-                            <arguments>
-                                <argument>sloccount.sh</argument>
-                            </arguments>
                         </configuration>
                     </execution>
                 </executions>
